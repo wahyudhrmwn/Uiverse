@@ -1,13 +1,13 @@
+'use client'
+
 import Link from "next/link";
-import { 
-  FiHome, 
-  FiBox, 
-  FiHeart, 
-  FiSettings, 
-  FiUsers 
-} from "react-icons/fi";
+import { usePathname } from "next/navigation";
+import { FiBox, FiHeart, FiSettings, FiUsers } from "react-icons/fi";
+import { LuLayoutTemplate } from "react-icons/lu";
 
 export default function DashboardSidebar() {
+  const pathname = usePathname();
+
   return (
     <div className="drawer-side">
       <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
@@ -19,27 +19,52 @@ export default function DashboardSidebar() {
         </div>
         <ul className="menu p-4 text-base-content w-full">
           <li>
-            <Link href="/dashboard" className="flex items-center gap-2">
-              <FiHome /> Dashboard
+            <Link 
+              href="/template" 
+              className={`flex items-center gap-2 text-white ${
+                pathname === '/template' ? 'bg-primary' : ''
+              }`}
+            >
+              <LuLayoutTemplate /> Template
             </Link>
           </li>
           <li>
-            <Link href="/dashboard/components" className="flex items-center gap-2">
+            <Link 
+              href="/components"
+              className={`flex items-center gap-2 text-white ${
+                pathname === '/components' ? 'bg-primary' : ''
+              }`}
+            >
               <FiBox /> Components
             </Link>
           </li>
           <li>
-            <Link href="/dashboard/favorites" className="flex items-center gap-2">
+            <Link 
+              href="/favorites"
+              className={`flex items-center gap-2 text-white ${
+                pathname === '/favorites' ? 'bg-primary' : ''
+              }`}
+            >
               <FiHeart /> Favorites
             </Link>
           </li>
           <li>
-            <Link href="/dashboard/community" className="flex items-center gap-2">
+            <Link 
+              href="/community"
+              className={`flex items-center gap-2 text-white ${
+                pathname === '/community' ? 'bg-primary' : ''
+              }`}
+            >
               <FiUsers /> Community
             </Link>
           </li>
           <li>
-            <Link href="/dashboard/settings" className="flex items-center gap-2">
+            <Link 
+              href="/settings"
+              className={`flex items-center gap-2 text-white ${
+                pathname === '/settings' ? 'bg-primary' : ''
+              }`}
+            >
               <FiSettings /> Settings
             </Link>
           </li>
@@ -47,4 +72,4 @@ export default function DashboardSidebar() {
       </aside>
     </div>
   );
-} 
+}

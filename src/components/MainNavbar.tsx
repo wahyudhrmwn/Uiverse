@@ -26,7 +26,7 @@ export default function MainNavbar() {
             }}
           />
         ) : (
-          <SignInButton mode="modal">
+          <SignInButton mode="modal" fallbackRedirectUrl="/template">
             <button className="btn btn-primary">Sign In</button>
           </SignInButton>
         )}

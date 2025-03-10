@@ -17,11 +17,8 @@ export default function HeroSection() {
             everything you need in one place.
           </p>
           <div className="flex gap-4 justify-center">
-            <Link href={isSignedIn ? "/dashboard" : "/login"} className="btn btn-primary">
+            <Link href={isSignedIn ? "/template" : "/login"} className="btn btn-primary">
               Get Started
-            </Link>
-            <Link href={isSignedIn ? "/dashboard" : "/login"} className="btn btn-outline">
-              Learn More
             </Link>
           </div>
 
